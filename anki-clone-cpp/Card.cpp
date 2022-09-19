@@ -1,6 +1,6 @@
 #include "Card.hpp"
 
-AnkiClone::Card::Card()
+AnkiClone::Card::Card(std::string front, std::string back) : front(front), back(back)
 {
 }
 

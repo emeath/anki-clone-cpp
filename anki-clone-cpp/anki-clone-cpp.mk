@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IntermediateDirectory)/Deck.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Field.cpp$(ObjectSuffix) $(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IntermediateDirectory)/Deck.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -91,6 +91,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/Field.cpp$(ObjectSuffix): Field.cpp $(IntermediateDirectory)/Field.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Field.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Field.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Field.cpp$(DependSuffix): Field.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Field.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Field.cpp$(DependSuffix) -MM Field.cpp
+
+$(IntermediateDirectory)/Field.cpp$(PreprocessSuffix): Field.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Field.cpp$(PreprocessSuffix) Field.cpp
+
 $(IntermediateDirectory)/Card.cpp$(ObjectSuffix): Card.cpp $(IntermediateDirectory)/Card.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Card.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Card.cpp$(DependSuffix): Card.cpp

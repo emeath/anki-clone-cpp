@@ -1,0 +1,23 @@
+#include "Field.hpp"
+
+AnkiClone::Field::Field(std::string field) : field(field)
+{
+	validateFieldLenght();
+}
+
+AnkiClone::Field::~Field()
+{
+}
+
+void AnkiClone::Field::validateFieldLenght()
+{
+	if(this->field.size() < 3) {
+		std::cout << "Your input is too short." << std::endl;
+		exit(1);
+	}
+}
+
+std::string AnkiClone::Field::getField() 
+{
+	return this->field;
+}
