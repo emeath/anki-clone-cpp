@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Back.cpp"/>
+    <File Name="Back.hpp"/>
+    <File Name="Front.cpp"/>
+    <File Name="Front.hpp"/>
     <File Name="Field.cpp"/>
     <File Name="Field.hpp"/>
     <File Name="Card.cpp"/>

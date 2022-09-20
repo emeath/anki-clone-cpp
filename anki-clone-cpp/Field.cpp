@@ -2,14 +2,14 @@
 
 AnkiClone::Field::Field(std::string field) : field(field)
 {
-	validateFieldLenght();
+	validateFieldLength();
 }
 
 AnkiClone::Field::~Field()
 {
 }
 
-void AnkiClone::Field::validateFieldLenght()
+void AnkiClone::Field::validateFieldLength()
 {
 	if(this->field.size() < 3) {
 		std::cout << "Your input is too short." << std::endl;

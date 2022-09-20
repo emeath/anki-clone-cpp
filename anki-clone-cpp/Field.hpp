@@ -18,7 +18,7 @@ public:
 	std::string getField();
 
 private:
-	void validateFieldLenght();
+	void validateFieldLength();
 };
 
 }
