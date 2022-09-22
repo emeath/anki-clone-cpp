@@ -3,12 +3,19 @@
 #include "Field.hpp"
 #include "Front.hpp"
 #include "Back.hpp"
+#include "Card.hpp"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
 	printf("hello world\n");
+	
+	AnkiClone::Card card("f oiiiiii", "b oiiiiiiiiiii");
+	
+	
+	cout << "front = " << card.getFront().getField() << " back = " << card.getBack().getField() << endl;
+	
 	
 	AnkiClone::Front f("What is the pi?");
 	AnkiClone::Back b("Is the number 3.14");

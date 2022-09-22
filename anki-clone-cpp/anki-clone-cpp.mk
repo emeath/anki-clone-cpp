@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=mm
-Date                   :=20/09/22
+Date                   :=21/09/22
 CodeLitePath           :=/home/mm/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Front.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Back.cpp$(ObjectSuffix) $(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IntermediateDirectory)/Deck.cpp$(ObjectSuffix) $(IntermediateDirectory)/Field.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Deck.cpp$(ObjectSuffix) $(IntermediateDirectory)/Field.cpp$(ObjectSuffix) $(IntermediateDirectory)/Front.cpp$(ObjectSuffix) $(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IntermediateDirectory)/Back.cpp$(ObjectSuffix) 
 
 
 
@@ -91,14 +91,6 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/Front.cpp$(ObjectSuffix): Front.cpp $(IntermediateDirectory)/Front.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Front.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Front.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Front.cpp$(DependSuffix): Front.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Front.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Front.cpp$(DependSuffix) -MM Front.cpp
-
-$(IntermediateDirectory)/Front.cpp$(PreprocessSuffix): Front.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Front.cpp$(PreprocessSuffix) Front.cpp
-
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
@@ -106,22 +98,6 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
-$(IntermediateDirectory)/Back.cpp$(ObjectSuffix): Back.cpp $(IntermediateDirectory)/Back.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Back.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Back.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Back.cpp$(DependSuffix): Back.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Back.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Back.cpp$(DependSuffix) -MM Back.cpp
-
-$(IntermediateDirectory)/Back.cpp$(PreprocessSuffix): Back.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Back.cpp$(PreprocessSuffix) Back.cpp
-
-$(IntermediateDirectory)/Card.cpp$(ObjectSuffix): Card.cpp $(IntermediateDirectory)/Card.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Card.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Card.cpp$(DependSuffix): Card.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Card.cpp$(DependSuffix) -MM Card.cpp
-
-$(IntermediateDirectory)/Card.cpp$(PreprocessSuffix): Card.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Card.cpp$(PreprocessSuffix) Card.cpp
 
 $(IntermediateDirectory)/Deck.cpp$(ObjectSuffix): Deck.cpp $(IntermediateDirectory)/Deck.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Deck.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Deck.cpp$(ObjectSuffix) $(IncludePath)
@@ -138,6 +114,30 @@ $(IntermediateDirectory)/Field.cpp$(DependSuffix): Field.cpp
 
 $(IntermediateDirectory)/Field.cpp$(PreprocessSuffix): Field.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Field.cpp$(PreprocessSuffix) Field.cpp
+
+$(IntermediateDirectory)/Front.cpp$(ObjectSuffix): Front.cpp $(IntermediateDirectory)/Front.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Front.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Front.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Front.cpp$(DependSuffix): Front.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Front.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Front.cpp$(DependSuffix) -MM Front.cpp
+
+$(IntermediateDirectory)/Front.cpp$(PreprocessSuffix): Front.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Front.cpp$(PreprocessSuffix) Front.cpp
+
+$(IntermediateDirectory)/Card.cpp$(ObjectSuffix): Card.cpp $(IntermediateDirectory)/Card.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Card.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Card.cpp$(DependSuffix): Card.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Card.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Card.cpp$(DependSuffix) -MM Card.cpp
+
+$(IntermediateDirectory)/Card.cpp$(PreprocessSuffix): Card.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Card.cpp$(PreprocessSuffix) Card.cpp
+
+$(IntermediateDirectory)/Back.cpp$(ObjectSuffix): Back.cpp $(IntermediateDirectory)/Back.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/mm/Workspaces/ws-cpp/codelite_ws/codelite_ws/anki-clone-cpp/Back.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Back.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Back.cpp$(DependSuffix): Back.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Back.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Back.cpp$(DependSuffix) -MM Back.cpp
+
+$(IntermediateDirectory)/Back.cpp$(PreprocessSuffix): Back.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Back.cpp$(PreprocessSuffix) Back.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -16,6 +16,8 @@ public:
 	explicit Card(std::string front, std::string back);
 	~Card();
 
+	AnkiClone::Front getFront();
+	AnkiClone::Back getBack();
 };
 
 }

@@ -1,1 +1,1 @@
-./Debug/Front.cpp.o ./Debug/main.cpp.o ./Debug/Back.cpp.o ./Debug/Card.cpp.o ./Debug/Deck.cpp.o ./Debug/Field.cpp.o
+./Debug/main.cpp.o ./Debug/Deck.cpp.o ./Debug/Field.cpp.o ./Debug/Front.cpp.o ./Debug/Card.cpp.o ./Debug/Back.cpp.o
