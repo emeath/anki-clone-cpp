@@ -4,29 +4,30 @@
 #include "Front.hpp"
 #include "Back.hpp"
 #include "Card.hpp"
+#include "Deck.hpp"
 
 using namespace std;
 
 int main(int argc, char **argv)
-{
-	printf("hello world\n");
+{	
+	AnkiClone::Card card1("What is the sky's color?", "Blue");
+	AnkiClone::Card card2("What is the earth's radius?", "6371 km");
+	AnkiClone::Card card3("What is the fifth planet on solar system?", "Jupiter");
+	AnkiClone::Card card4("How do I say goodbye in deutsch?", "Auf Wiedersehen");
 	
-	AnkiClone::Card card("f oiiiiii", "b oiiiiiiiiiii");
+	AnkiClone::Deck deck = string("General topic");
 	
+	deck.addCard(card1);
+	deck.addCard(card2);
+	deck.addCard(card3);
+	deck.addCard(card4);
 	
-	cout << "front = " << card.getFront().getField() << " back = " << card.getBack().getField() << endl;
-	
-	
-	AnkiClone::Front f("What is the pi?");
-	AnkiClone::Back b("Is the number 3.14");
-	
-	cout << f.getField() << endl;
-	cout << b.getField() << endl;
-	
-	AnkiClone::Front front("1112222222222222222222sss sss222222222222222221111111112222222222222222222222312312321312312312312342412312312323");
-	AnkiClone::Back back("11111111111111111111111111111111112222222222222222222222222222222312312321312312312312342412312312323ssssssssss sssssssss sss11111111111111111111111111111111112222222222222222222222222222222312312321312312312312342412312312323ssssssssss sssssssss sss11111111111111111111111111111111112222222222222222222222222222222312312321312312312312342412312312323ssssssssss sssssssss sss11111111111111111111111111111111112222222222222222222222222222222312312321312312312312342412312312323ssssssssss sssssssss ssss");;
-	
-	cout << front.getField() << endl;
+	for(AnkiClone::Card card : deck.getCards()) {
+		cout << "Front: " << card.getFront().getField() << endl;
+		getchar();
+		cout << "Back: " << card.getBack().getField() << endl;
+		cout << "===================================" << endl;
+	}
 	
 	return 0;
 }

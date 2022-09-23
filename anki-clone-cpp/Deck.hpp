@@ -19,6 +19,7 @@ public:
 	~Deck();
 	std::vector<Card> getCards();
 	void addCard(Card card);
+	std::string getName();
 
 };
 
